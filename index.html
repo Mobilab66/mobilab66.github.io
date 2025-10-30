@@ -1,101 +1,334 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<title>Mobilab66</title>
-
-<link href="css/helper.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="css/dropdown.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="css/default.css" media="screen" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobilab66 - FabLab Mobile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #6a4c93;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .logo-title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .logo-title img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+        }
+        .title-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        h1 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 2.2rem;
+        }
+        p {
+            margin: 0.3rem 0;
+            font-size: 1.1rem;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 0.8rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav a {
+            margin: 0 1.2rem;
+            text-decoration: none;
+            color: #6a4c93;
+            padding: 0.6rem 1rem;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            background-color: #e8e8e8;
+        }
+        nav a.active {
+            background-color: #6a4c93;
+            color: white;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 2.5rem;
+            display: none;
+        }
+        section.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        footer {
+            background-color: #6a4c93;
+            color: white;
+            text-align: center;
+            padding: 1.2rem;
+            margin-top: 2rem;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.5rem 0;
+        }
+        .gallery img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #6a4c93;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
-<body style="background-color:#070C14;">
+<body>
+    <header>
+        <div class="logo-title-container">
+            <div class="logo-title">
+                <img src="https://cdn.helloasso.com/img/photos/adhesions/croppedimage-c0701a5e7e9d45d99d43159eea09edaf.png" alt="Logo Mobilab66">
+                <div class="title-text">
+                    <h1>Mobilab66</h1>
+                    <p>FabLab Mobile des Pyrénées-Orientales</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <a href="#accueil" class="active" onclick="showSection('accueil')">Accueil</a>
+        <a href="#presentation" onclick="showSection('presentation')">Présentation</a>
+        <a href="#ateliers-realisables" onclick="showSection('ateliers-realisables')">Ateliers réalisables</a>
+        <a href="#ateliers-realises" onclick="showSection('ateliers-realises')">Ateliers réalisés</a>
+        <!--<a href="#projets-membres" onclick="showSection('projets-membres')">Projets des membres</a> -->
+		<!--<a href="#articles" onclick="showSection('articles')">Presse</a> -->
+    </nav>
+    <main>
+        <!-- Page Accueil -->
+        <section id="accueil" class="active">
+            <h2>Bienvenue au Mobilab66</h2>
+            <p>Découvrez notre FabLab mobile, nos ateliers et nos projets collaboratifs !</p>
+			<img align='center' src="https://cdn.helloasso.com/img/photos/adhesions/croppedimage-c0701a5e7e9d45d99d43159eea09edaf.png" alt="Logo Mobilab66">
+			<img align='center' src="https://mobilab66.github.io/images/articles/Prez1.png" alt="Logo Mobilab66">
+        </section>
 
-<ul id="nav" class="dropdown dropdown-horizontal">
-	<li class="first"><a href="mobilab66.github.io">Accueil</a></li>
-	<li class="dir">Actions
-		<ul>
-			<li class="first"><a href="01_tete_etoiles.html">La t�te dans les �toiles</a></li>
-			<li><a href="02_skatepark.html">Un skatepark sur mesure</a></li>
-			<li><a href="03_instant_jeune.html">Instant Jeune</a></li>
-			<li><a href="04_IME.html">L'IME Maillol</a></li>
-			<li><a href="05_FabriqueMatos.html">Je Fabrique mon mat�riel p�dagogique</a></li>
-			<!--
-			<li><a href="#" class="dir">Langages</a>
-				<ul>
-					<li class="first"><a href="#">jQuery</a></li>
-					<li><a href="#">Javascript</a></li>
-					<li><a href="#">Flash</a></li>
-					<li class="last"><a href="#">C</a></li>
-				</ul>
-			</li>
-			-->
+        <!-- Page Présentation -->
+        <section id="presentation">
+            <h2>Présentation de l'association</h2>
+            <p>Depuis 2019, Mobilab66 est une association basée dans les Pyrénées-Orientales, qui propose un <strong>FabLab mobile</strong> pour rendre accessible à tous les outils numériques de prototypage. Notre mission : vous accompagner dans la réalisation de vos projets en adoptant la posture "maker" (DIY – Do It Yourself).</p>
+            <p>Que ce soit pour la modélisation 3D, l’impression 3D, la découpe laser, la gravure, l’électronique, la robotique ou la réalité virtuelle, nous mettons à votre disposition un espace collaboratif et itinérant, équipé de matériel adapté.</p><br>
+            <p><strong>Pourquoi ?</strong> Nous croyons que chacun peut apprendre en faisant. Nos ateliers ludiques et formatifs permettent de découvrir le numérique, de réparer plutôt que jeter, et d’innover grâce aux technologies de prototypage.</p><br>
+            <p><strong>Nos valeurs :</strong> Le partage, l’inclusion, le recyclage et l’innovation pédagogique.</p>
+        </section>
+
+        <!-- Page Ateliers réalisables -->
+        <section id="ateliers-realisables">
+            <h2>Ateliers réalisables</h2>
+            <h3>Éducation</h3>
+            <ul>
+                <li>Découverte de la création numérique : modélisation 3D, initiation au codage.</li>
+                <li>Ateliers scolaires : projets collaboratifs pour les écoles, collèges et lycées.</li>
+            </ul>
+            <h3>Handicap</h3>
+            <ul>
+                <li>Adaptation d’objets du quotidien pour faciliter l’autonomie.</li>
+                <li>Ateliers inclusifs : utilisation des outils numériques pour rendre les activités accessibles.</li>
+            </ul>
+            <h3>High-Tech</h3>
+            <ul>
+                <li>Réalité virtuelle : immersion dans des univers 3D.</li>
+                <li>Robotique & Domotique : création de robots ou d’objets connectés.</li>
+            </ul>
+            <h3>Low-Tech</h3>
+            <ul>
+                <li>Repair Café : apprendre à réparer et customiser des objets.</li>
+                <li>Fabrication d’objets utiles à partir de matériaux recyclés.</li>
+            </ul>
+        </section>
+
+        <!-- Page Ateliers réalisés -->
+        <section id="ateliers-realises">
+            <h2>Ateliers déjà réalisés</h2>
+            <h3>Éducation</h3>
+            <p><strong>De l'idée au prototype</strong> (Pôle jeunesse Cabestany, 2025) :</p>
+            <p><em>"Les jeunes ont pu réaliser un dessin en 3D qu'ils ont pu par la suite imprimer et repartir avec"</em> – Un animateur.</p>
+            <div class="gallery">
+                <img src="https://media.licdn.com/dms/image/v2/D4D22AQFtA6uOANiRSQ/feedshare-shrink_2048_1536/B4DZidmUdrH8Ao-/0/1754990725691?e=1763596800&v=beta&t=LxqEnN12_VoRFPVzM-SD0v5Ec6kEcNtH3lXnT6bitvs" alt="Prototypage">
+				<img src="https://media.licdn.com/dms/image/v2/D4D22AQF6fs3C0EE2pg/feedshare-shrink_2048_1536/B4DZidmUehGsAo-/0/1754990725701?e=1763596800&v=beta&t=6-oWqiz01aWc4JS3lx8ivuXGkVHxcwLYdDt4VMkfSPk" alt="Prototypage">
+				<img src="https://media.licdn.com/dms/image/v2/D4D22AQHkh6ZtXZkdEg/feedshare-shrink_2048_1536/B4DZidmUeiGsA0-/0/1754990725719?e=1763596800&v=beta&t=KiJZXB-uZjsavxIHWIePAm7mg1-d7h8ppS9s0CdrdiQ" alt="Prototypage">
+				<img src="https://media.licdn.com/dms/image/v2/D4D22AQEOcZwHnMAixA/feedshare-shrink_2048_1536/B4DZidmUe4H8Aw-/0/1754990725806?e=1763596800&v=beta&t=Qjz3HQVrNHuNmkiXRsL5hs8x2vYljmM9BKUpJXAKNog" alt="Prototypage">
+            </div>
 			
-			<li class="last"><a href="#">Liens</a></li>
-		</ul>
-	</li>
-	<li class="dir">Services
-		<ul>
-			<li class="first"><a href="https://fablab66.fr">Espace documentation</a></li>
-			<li><a href="https://fablab66.fr/#!/machines">Espace r�servation machines</a></li>
-			<li class="last"><a href="mailto:mobilab66+blog@gmail.com">Nous contacter</a></li>
-		</ul>
-	</li>
-	<li class="dir">R�seaux
-		<ul>
-		<li class="first"><a href="https://twitter.com/mobilab66">Twitter</a></li>
-		<li class="last"><a href="https://www.linkedin.com/in/mobilab66/">Linkedin</a></li>
-			<!--
-			<li class="first"><a href="#" class="dir">Twitter</a>
-				<ul>
-					<li class="first"><a href="#">sous-menu</a></li>
-					<li class="last"><a href="#">sous-menu</a></li>
-				</ul>
-			</li>
+			<h3>Éducation</h3>
+            <p><strong>Je fabrique mon matériel pédagogique</strong> (Lycée Maillol, 2024) :</p>
+            <p><em>"J'ai pu fabriquer mon propre matériel pour ma classe et distribuer les fichiers librement à mes collègues et sur internet"</em> – Enseignant partenaire.</p>
+            <div class="gallery">
+                <img src="https://media.licdn.com/dms/image/v2/D4E22AQEFVWv-Ga3zyA/feedshare-shrink_1280/feedshare-shrink_1280/0/1729926431081?e=1763596800&v=beta&t=onlnGTmO7Tjhj6KwQiDVn6w34xKw3r4jIv40YI3fXpw" alt="Prototypage">
+				<img src="https://media.licdn.com/dms/image/v2/D4E22AQHdG1uKdKGxkA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1729926430092?e=1763596800&v=beta&t=Nr-VfUM-Pn-_j9ljXQhBrm3XRWR92FTmcPnuLOMANYA" alt="Prototypage">
+				<img src="https://media.licdn.com/dms/image/v2/D4E22AQE7kR4jNOmVSQ/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1729926430276?e=1763596800&v=beta&t=bT59-uSe5t1F6yI4Y8BH0axBLrXXPcUXD_-UyxSCTBA" alt="Prototypage">
+            </div>
 			
-			<li><a href="#" class="dir">sous-menu</a>
-				<ul>
-					<li class="first"><a href="#">sous-menu</a></li>
-					<li class="last"><a href="#">sous-menu</a></li>
-				</ul>
-			</li>
-			<li><a href="#">sous-menu</a></li>
-			<li><a href="#">sous-menu</a></li>
-			<li class="last"><a href="#">sous-menu</a></li>
-		-->
+			<h3>Découverte</h3>
+            <p><strong>L'immersion </strong> (Pôle jeunesse Cabestany, 2025) :</p>
+            <p><em>"Les élèves ont adoré résoudre des énigmes en utilisant des casques VR et des imprimantes 3D. Une façon ludique d’apprendre la logique et la collaboration !"</em> – Animateur.</p>
+            <div class="gallery">
+                <img src="https://mobilab66.github.io/images/articles/Prez2.png" alt="Escape Game Numérique">
+            </div>
 			
-		</ul>
-	</li>
-	<!--
-	<li class="dir last">
-		<form method="post" action="">
-			<fieldset>
-				<label for="search">Search:</label>
-				<input type="text" id="search" class="text" value="Recherche" onfocus="if (this.value == 'Search!') this.value = '';" onblur="if (this.value == '') this.value = 'Search!';" maxlength="255" />
-				<input type="image" src="images/btn_search.png" class="button" />
-			</fieldset>
-		</form>
-	</li>
-	-->
-</ul>
-<div style="position: relative; width: 100%; height: 0; padding-top: 100%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="images/articles/Prez1.png">
-  </iframe>
-  </div>
-  <div style="position: relative; width: 100%; height: 0; padding-top: 100%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="images/articles/Prez2.png">
-  </iframe>
-  </div>
-  <div style="position: relative; width: 100%; height: 0; padding-top: 100%;
- padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
- border-radius: 8px; will-change: transform;">
-  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-    src="images/articles/Prez3.png">
-  </iframe>
-</div>
+            <h3>Handicap</h3>
+            <p><strong>Réalisations sur-mesure</strong> :</p>
+            <p><em>"Grâce au Mobilab66, mon fils a pu customiser son fauteuil avec des flasques IronMan. Cette journée lui a donné le sourire."</em> – Parent d’un participant.</p>
+            <div class="gallery">
+				<img src="https://media.licdn.com/dms/image/v2/D4E22AQGT2O5H64HWaw/feedshare-shrink_1280/B4EZW4Mc_zGgAk-/0/1742552027930?e=1763596800&v=beta&t=zl1KoQGTz87-EItu26vj4Tv9hHS2SlNkTLms7TCR72s" alt="Prothèse personnalisée">
+                <img src="https://media.licdn.com/dms/image/v2/D4E22AQH_vDLPxLeAkQ/feedshare-shrink_2048_1536/B4EZYY0MyCHMAo-/0/1744173059937?e=1763596800&v=beta&t=Dg5c8iG2KrAxOdOremLR4H1L0Hr_d5Cn4_u5LBJcSG0" alt="Prothèse personnalisée">
+				<img src="https://media.licdn.com/dms/image/v2/D4E22AQEXr6fCtu1Ryw/feedshare-shrink_1280/B4EZYkda7YHgAo-/0/1744368416476?e=1763596800&v=beta&t=yX5_iuow3p3ROzu9LaoJkEGywTe8x1DLBrcKeOThwYk" alt="Prothèse personnalisée">
+				<img src="https://media.licdn.com/dms/image/v2/D4E22AQEKtyZ2zyzGbQ/feedshare-shrink_2048_1536/B4EZYY0MxSGgAo-/0/1744173059866?e=1763596800&v=beta&t=l1aPd4-MoVNFb_OP2S62mf8EIUKYGan0uR0LJcH0HWM" alt="Prothèse personnalisée">
+				<img src="https://media.licdn.com/dms/image/v2/D4E22AQGT4ZydGOYxEg/feedshare-shrink_1280/feedshare-shrink_1280/0/1713254832737?e=1763596800&v=beta&t=YoT6ZMGi4sr3UELPvUKz_pLdN0iwrTieoa5vACHbW8U" alt="Prothèse personnalisée">
+				
+            </div>
+			
+			<h3>Solidarité</h3>
+            <p><strong>Réalisations sur-mesure</strong> :</p>
+            <p><em>Mobilab66 apporte son aide au club des HandiDragons sur leurs différents rendez-vous marquants de la saison</p>
+            <div class="gallery">
+				<img src="https://media.licdn.com/dms/image/v2/D4D22AQEjKeB-zxj4VA/feedshare-shrink_800/feedshare-shrink_800/0/1733797834435?e=1763596800&v=beta&t=_6khRW2TsDrynvJO8Fn_IxKjKqmWlWfJIr469x4kaOM" alt="Prothèse personnalisée">
+                <img src="https://media.licdn.com/dms/image/v2/D4E22AQGoGErdm4wmuA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1733235928422?e=1763596800&v=beta&t=E19w7cjmzGrThNhwc-vh-qC9k24BiUEOTJVZ-VytU28" alt="Prothèse personnalisée">
+				<img src="https://media.licdn.com/dms/image/v2/D4E22AQGVV3onxRgVRA/feedshare-shrink_1280/feedshare-shrink_1280/0/1718834662080?e=1763596800&v=beta&t=NxNzpR1W5fvyWC-WtMk4ymdEyQQRqKMT4zqiGoCkZr4" alt="Prothèse personnalisée">
+				<img src="https://media.licdn.com/dms/image/v2/D4E22AQEzzvygpuOSug/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727973956971?e=1763596800&v=beta&t=7fcXUFkxzBWsGaxZI6NINw7bGzJEpvfbul0ShI2AirA" alt="Prothèse personnalisée">
+				<img src="https://media.licdn.com/dms/image/v2/D4E22AQETFBlXEx8JwA/feedshare-shrink_1280/feedshare-shrink_1280/0/1718834665504?e=1763596800&v=beta&t=t97zj4FlcE2ZpYCJ67jnDCIL31RJTOAs5TiRK0zB_jg" alt="Prothèse personnalisée">
+				
+            </div>
+			
+			<h3>Santé</h3>
+            <p><strong>HackXion</strong> (Partenariat avec Entr'Aides et Action Santé) :</p>
+            <p><em>"Grâce au Mobilab66,et à ses partenaires, nous avons pu découvrir la réalité virtuelle pour la reprise du sport ou encore les aides techniques que l'on ne peut trouver dans le commerce. Ils m'ont également aidé à maitriser l'outils informatique pour garder contact avec ma famille et mes amis au travers des réseaux sociaux"</em> – Une participante.</p>
+            <div class="gallery">
+                <img src="https://media.licdn.com/dms/image/v2/D4D22AQG_TbWDdTuZzg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1732278541505?e=1763596800&v=beta&t=wn4bwvbw5dEhqF0w5rCLbi2yKfQGHjXCiFmBe0XU7Ko" alt="Prothèse personnalisée">
+				<img src="https://media.licdn.com/dms/image/v2/D4E22AQFzfshqHLwtzg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1727973957034?e=1763596800&v=beta&t=NznY_mwbr9ZUeQhZC5BtHiwyTC1UyiHOs2amGO6Gyqg" alt="Prothèse personnalisée">
+            </div>
+        </section>
+
+        <!-- Page Projets des membres -->
+        <section id="projets-membres">
+            <h2>Projets des membres</h2>
+            <p>Découvrez les réalisations des makers, bénévoles et participants du Mobilab66 !</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Projet</th>
+                        <th>Description</th>
+                        <th>Galerie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prothèse personnalisée</td>
+                        <td>Une main robotisée imprimée en 3D pour un enfant, customisée avec ses motifs préférés.</td>
+                        <td><a href="#">Voir la galerie</a></td>
+                    </tr>
+                    <tr>
+                        <td>Station météo connectée</td>
+                        <td>Conçue par un groupe de lycéens, cette station mesure la température et l’humidité en temps réel.</td>
+                        <td><a href="#">Voir la galerie</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Tous nos projets sont documentés et partagés en open source. Retrouvez les tutoriels et fichiers 3D sur <a href="http://fablab66.fr">fablab66.fr</a>.</p>
+        </section>
+		
+		<!-- Page Articles -->
+        <section id="articles">
+            <h2>Projets des membres</h2>
+            <p>Découvrez quelques articles et vidéos avec la participations de Mobilab66 !</p>
+            <table>
+                <thead>
+					<img src="https://media.licdn.com/dms/image/v2/D4D22AQG_TbWDdTuZzg/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1732278541505?e=1763596800&v=beta&t=wn4bwvbw5dEhqF0w5rCLbi2yKfQGHjXCiFmBe0XU7Ko" alt="Prothèse personnalisée">
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prothèse personnalisée</td>
+                        <td>Une main robotisée imprimée en 3D pour un enfant, customisée avec ses motifs préférés.</td>
+                        <td><a href="#">Voir la galerie</a></td>
+                    </tr>
+                    <tr>
+                        <td>Station météo connectée</td>
+                        <td>Conçue par un groupe de lycéens, cette station mesure la température et l’humidité en temps réel.</td>
+                        <td><a href="#">Voir la galerie</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Tous nos projets sont documentés et partagés en open source. Retrouvez les tutoriels et fichiers 3D sur <a href="http://fablab66.fr">fablab66.fr</a>.</p>
+        </section>
+		
+		https://media.licdn.com/dms/image/v2/D4E22AQFzJVL2zl0vYA/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1712253981366?e=1763596800&v=beta&t=pF9EK0w5e1bY0EmzUqEDv_0VmXWsZ340L8y6weUi0AE
+    </main>
+    <footer>
+        <p>© 2025 Mobilab66 – FabLab Mobile des Pyrénées-Orientales</p>
+    </footer>
+    
+    <script>
+        function showSection(sectionId) {
+            // Masquer toutes les sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Afficher la section demandée
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Mettre à jour l'état actif des liens de navigation
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
