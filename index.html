@@ -332,5 +332,29 @@
             event.currentTarget.classList.add('active');
         }
     </script>
+	<script>
+(function() {
+    const ANALYTICS_URL = 'https://visitme.fr:1234/api/track';
+    const SITE_NAME = 'Mobilab66_github'; // Change pour chaque site
+    
+    function trackPageView() {
+        fetch(ANALYTICS_URL, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                site: SITE_NAME,
+                page: window.location.pathname,
+                referrer: document.referrer || ''
+            })
+        }).catch(err => console.debug('Analytics:', err));
+    }
+    
+    if (document.readyState === 'complete') {
+        trackPageView();
+    } else {
+        window.addEventListener('load', trackPageView);
+    }
+})();
+</script>
 </body>
 </html>
